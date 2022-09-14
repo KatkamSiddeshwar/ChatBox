@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func MessageSend(_ sender: Any) {
         if MessageText.text == "" { return }
         mSocket.emit("send-message", MessageText.text, room)
-        message.append("Me: " + MessageText.text)
+        message.append("Self: " + MessageText.text)
         tableView.reloadData()
         MessageText.text = ""
     }
